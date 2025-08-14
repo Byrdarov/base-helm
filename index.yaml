@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  base-helm:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-08-14T11:35:02.30794+03:00"
+    description: A Helm chart for Kubernetes
+    digest: ffefd795108c01585a7b81f9c33c9294fd6f225d923d2906c39dd06c056c7f5f
+    name: base-helm
+    type: application
+    urls:
+    - https://byrdarov.github.io/base-helm/base-helm-1.0.0.tgz
+    version: 1.0.0
+generated: "2025-08-14T11:35:02.307218+03:00"
