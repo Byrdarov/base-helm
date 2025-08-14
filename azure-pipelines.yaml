@@ -1,0 +1,19 @@
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Internal-Development-Subscription(d7ef0fe4-a628-4151-8319-865c6692951a)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az acr login --name cleverpine
+
+- script: |
+    helm package ./ -d .
+    helm push base-helm-*.tgz oci://cleverpine.azurecr.io/helm
+  displayName: "Package and Push Helm Charts to ACR"
